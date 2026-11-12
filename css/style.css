@@ -1,0 +1,91 @@
+/* So Valencia — Azulejo */
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#FBF8F2;color:#0F1B33;font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#1C3D8F}a:hover{color:#0F1B33}
+img,svg{max-width:100%}
+.serif{font-family:Fraunces,Georgia,serif}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+:focus-visible{outline:3px solid #E8731A;outline-offset:3px}
+
+/* ---------- Animations: transform + opacity only ---------- */
+@keyframes sv-rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes sv-fade{from{opacity:0}to{opacity:1}}
+@keyframes sv-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes sv-bob{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-10px) rotate(6deg)}}
+@keyframes sv-drift{from{transform:translateX(0)}to{transform:translateX(-64px)}}
+@keyframes sv-up{from{transform:translateY(100%)}to{transform:none}}
+@keyframes sv-bumpA{0%{transform:scale(1)}40%{transform:scale(1.18)}100%{transform:scale(1)}}
+@keyframes sv-bumpB{0%{transform:scale(1)}40%{transform:scale(1.18)}100%{transform:scale(1)}}
+@keyframes sv-shakeA{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+@keyframes sv-shakeB{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.sv-rise{animation:sv-rise .7s cubic-bezier(.2,.7,.2,1) both}
+.sv-d1{animation-delay:.1s}.sv-d2{animation-delay:.22s}.sv-d3{animation-delay:.34s}.sv-d4{animation-delay:.5s}
+.sv-fade{animation:sv-fade .35s ease both}
+.sv-track{display:flex;width:max-content;animation:sv-marquee 32s linear infinite}
+.sv-track:hover{animation-play-state:paused}
+.sv-slow{animation-duration:70s}
+.sv-bob{animation:sv-bob 4s ease-in-out infinite}
+.sv-drift{animation:sv-drift 6s linear infinite}
+.sv-bumpA{animation:sv-bumpA .4s ease}
+.sv-bumpB{animation:sv-bumpB .4s ease}
+.sv-shakeA{animation:sv-shakeA .3s ease}
+.sv-shakeB{animation:sv-shakeB .3s ease}
+.sv-card{transition:transform .25s ease,box-shadow .25s ease}
+.sv-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(15,27,51,.12)}
+.sv-card:active{transform:scale(.98)}
+.sv-btn{transition:transform .15s ease,background-color .2s ease,color .2s ease}
+.sv-btn:hover{transform:translateY(-2px)}
+.sv-btn:active{transform:scale(.97)}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+
+/* ---------- Header ---------- */
+.site-header{max-width:1280px;margin:0 auto;padding:20px 24px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px}
+.logo{display:flex;align-items:baseline;gap:8px;text-decoration:none;color:#1C3D8F}
+.logo span{font-family:Fraunces,Georgia,serif;font-size:30px;line-height:1}
+.site-nav{display:flex;flex-wrap:wrap;gap:28px;font-size:16px;font-weight:500}
+.site-nav a{color:#0F1B33;text-decoration:none}
+.site-nav a:hover{color:#1C3D8F;text-decoration:underline}
+.menu-btn{display:none;width:44px;height:44px;border:0;background:transparent;color:#1C3D8F;align-items:center;justify-content:center;cursor:pointer}
+.bag-btn{min-height:44px;padding:0 18px;border-radius:999px;border:1px solid #1C3D8F;background:transparent;color:#1C3D8F;font:600 15px Inter,sans-serif;display:flex;align-items:center;gap:8px;cursor:pointer}
+.bag-btn.has-items{background:#1C3D8F;color:#FBF8F2}
+@media (max-width:720px){
+  .site-header{padding:8px 12px 8px 12px}
+  .menu-btn{display:flex;order:0}
+  .logo{order:1}
+  .logo span{font-size:24px}
+  .bag-btn{order:2;padding:0 14px}
+  .bag-label{display:none}
+  .site-nav{order:3;display:none;width:100%;flex-direction:column;gap:0;padding:4px 4px 12px}
+  .site-nav.open{display:flex;animation:sv-fade .25s ease both}
+  .site-nav a{padding:12px 4px;border-bottom:1px solid #E5DCC8}
+}
+
+/* ---------- Mobile sticky bar ---------- */
+.sticky-bar{display:none}
+@media (max-width:640px){
+  .sticky-bar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:20;gap:10px;padding:12px 16px calc(16px + env(safe-area-inset-bottom));background:#FBF8F2;border-top:1px solid #E5DCC8;animation:sv-up .5s cubic-bezier(.2,.7,.2,1) .8s both}
+  body.has-sticky{padding-bottom:84px}
+}
+
+/* ---------- Toast / panel ---------- */
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);width:min(360px,calc(100% - 32px));z-index:30;background:#0F1B33;color:#FBF8F2;border-radius:12px;padding:16px 20px;display:flex;align-items:center;gap:14px;box-shadow:0 18px 40px rgba(15,27,51,.25)}
+.toast[hidden]{display:none}
+.toast.show{animation:sv-fade .3s ease both}
+@media (max-width:640px){.toast{bottom:100px}}
+
+/* ---------- Product page ---------- */
+details summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;font-weight:600;font-size:16px}
+details summary::-webkit-details-marker{display:none}
+details[open] summary .plus{transform:rotate(45deg)}
+.plus{transition:transform .2s ease;display:inline-block}
+.swatch{width:48px;height:48px;border-radius:50%;border:1px solid #C9BFA9;cursor:pointer;transition:box-shadow .2s ease}
+.swatch[aria-pressed="true"]{box-shadow:0 0 0 3px #FBF8F2,0 0 0 5px #1C3D8F}
+.size-btn{min-height:48px;border-radius:4px;border:1px solid #1C3D8F;background:#FFFFFF;color:#1C3D8F;font:600 15px Inter,sans-serif;cursor:pointer;transition:background-color .2s ease,color .2s ease}
+.size-btn[aria-pressed="true"]{background:#1C3D8F;color:#FBF8F2}
+.view-btn{flex:1;min-height:56px;border-radius:4px;border:1px solid #C9BFA9;background:#FFFFFF;color:#0F1B33;font:500 15px Inter,sans-serif;cursor:pointer}
+.view-btn[aria-pressed="true"]{border:2px solid #1C3D8F}
+.hidden{display:none!important}
