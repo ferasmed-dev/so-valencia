@@ -39,7 +39,8 @@ window.SV = {
     "Wait, what is horchata?",
     "A cold, sweet drink made from tigernuts (chufa) grown in the fields around Alboraya. Not the rice one."
    ],
-   "paymentLink": ""
+   "paymentLink": "",
+   "price": ""
   },
   {
    "id": "sun-sand-agua",
@@ -53,11 +54,12 @@ window.SV = {
    "line1": "Sun, sand &",
    "line2": "Agua de Valencia",
    "desc": "For long beach days that end with a jug of Agua de Valencia somewhere in El Carmen.",
+   "price": "18,99 €",
+   "paymentLink": "https://buy.stripe.com/dRmeVe0GH17GckDfQN0Ny00",
    "story": [
     "Wait, what is Agua de Valencia?",
     "The city's famous cocktail: fresh orange juice and cava with a splash of vodka and gin. Shared by the jug, never by the glass."
-   ],
-   "paymentLink": ""
+   ]
   },
   {
    "id": "born-to-siesta",
@@ -72,7 +74,8 @@ window.SV = {
    "line2": "siesta & fiesta",
    "desc": "Two priorities, in that order. Made for long lunches and even longer nights.",
    "story": null,
-   "paymentLink": ""
+   "paymentLink": "",
+   "price": ""
   },
   {
    "id": "calories-hoodie",
@@ -86,7 +89,8 @@ window.SV = {
    "line2": "in Valencia",
    "desc": "For the evenings when the sea breeze kicks in and the second dessert arrives anyway.",
    "story": null,
-   "paymentLink": ""
+   "paymentLink": "",
+   "price": ""
   }
  ],
  "price": "[€ price]",

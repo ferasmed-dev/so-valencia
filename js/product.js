@@ -18,6 +18,7 @@
   $('p-title').textContent = product.name;
   $('p-kind').textContent = kindLabel.toUpperCase() + ' · UNISEX';
   $('p-desc').textContent = product.desc;
+  $('p-price').textContent = product.price || data.price;
   $('crumb-name').textContent = product.name;
   $('crumb-kind').textContent = isHoodie ? 'Hoodies' : 'Tees';
   var meta = document.querySelector('meta[name="description"]');
@@ -154,7 +155,7 @@
     var l2 = document.createElement('p'); l2.className = 'serif'; l2.setAttribute('style', 'margin:0;font-size:24px'); l2.textContent = p.line2;
     box.appendChild(l1); box.appendChild(l2);
     var name = document.createElement('p'); name.className = 'serif'; name.setAttribute('style', 'margin:0;font-size:19px'); name.textContent = p.name;
-    var price = document.createElement('p'); price.setAttribute('style', 'margin:0;font-weight:600'); price.textContent = data.price;
+    var price = document.createElement('p'); price.setAttribute('style', 'margin:0;font-weight:600'); price.textContent = p.price || data.price;
     a.appendChild(box); a.appendChild(name); a.appendChild(price);
     related.appendChild(a);
   });
