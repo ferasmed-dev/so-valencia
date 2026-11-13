@@ -115,7 +115,22 @@
     card.addEventListener('mouseleave', stop);
     card.addEventListener('focus', start);
     card.addEventListener('blur', stop);
+    card._svStart = start;
+    card._svStop = stop;
   });
+
+  /* ---------- Touch screens (no hover): cycle while the card is on screen ---------- */
+  var noHover = window.matchMedia && window.matchMedia('(hover: none)').matches;
+  if (noHover && 'IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        var card = en.target;
+        if (!card._svStart) return;
+        if (en.isIntersecting) card._svStart(); else card._svStop();
+      });
+    }, { threshold: 0.6 });
+    Array.prototype.forEach.call(document.querySelectorAll('.card-photo'), function (card) { io.observe(card); });
+  }
 
   /* ---------- Expose for the product page ---------- */
   window.SVShop = {
