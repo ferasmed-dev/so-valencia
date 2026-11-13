@@ -7,6 +7,13 @@ window.SV = {
    "desc": "The official Valencian daily routine. Optional: everything except the siesta.",
    "styles": [
     {
+     "id": "icon-minimal",
+     "label": "Minimal icon",
+     "shirt": "white",
+     "shirtLabel": "White",
+     "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3Ji8zsCE5BBKitVhbDZRzr4a7lJ/1559e28b-f665-41d3-a5a5-79a545cbcf38.jpg"
+    },
+    {
      "id": "illustrated",
      "label": "Illustrated",
      "shirt": "royal-blue",
@@ -19,13 +26,6 @@ window.SV = {
      "shirt": "sand",
      "shirtLabel": "Sand",
      "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3Ji8zsCE5BBKitVhbDZRzr4a7lJ/ed332250-9a9c-4cd6-b417-ca7d18d972b5.jpg"
-    },
-    {
-     "id": "icon-minimal",
-     "label": "Minimal icon",
-     "shirt": "white",
-     "shirtLabel": "White",
-     "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3Ji8zsCE5BBKitVhbDZRzr4a7lJ/1559e28b-f665-41d3-a5a5-79a545cbcf38.jpg"
     },
     {
      "id": "type-minimal",
@@ -45,18 +45,18 @@ window.SV = {
    "desc": "For every 4 am dinner, every second jug and every flight you somehow missed. Not your fault. Valencia's.",
    "styles": [
     {
-     "id": "illustrated",
-     "label": "Illustrated",
-     "shirt": "royal-blue",
-     "shirtLabel": "Royal blue",
-     "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3Ji8zsCE5BBKitVhbDZRzr4a7lJ/ea1b8e5e-8d60-49a2-8d7a-7e3370e07fe5.jpg"
-    },
-    {
      "id": "type-bold",
      "label": "Bold type",
      "shirt": "white",
      "shirtLabel": "White",
      "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3Ji8zsCE5BBKitVhbDZRzr4a7lJ/c7ba85c1-8259-4205-8e9b-00bbe62362d2.jpg"
+    },
+    {
+     "id": "illustrated",
+     "label": "Illustrated",
+     "shirt": "royal-blue",
+     "shirtLabel": "Royal blue",
+     "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3Ji8zsCE5BBKitVhbDZRzr4a7lJ/ea1b8e5e-8d60-49a2-8d7a-7e3370e07fe5.jpg"
     },
     {
      "id": "icon-minimal",
@@ -88,6 +88,13 @@ window.SV = {
    "paymentLink": "https://buy.stripe.com/dRmeVe0GH17GckDfQN0Ny00",
    "styles": [
     {
+     "id": "icon-minimal",
+     "label": "Minimal icon",
+     "shirt": "white",
+     "shirtLabel": "White",
+     "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3Ji8zsCE5BBKitVhbDZRzr4a7lJ/bd2e1669-3f54-48b1-949b-699231988b6b.jpg"
+    },
+    {
      "id": "illustrated",
      "label": "Illustrated",
      "shirt": "royal-blue",
@@ -100,13 +107,6 @@ window.SV = {
      "shirt": "navy",
      "shirtLabel": "Navy",
      "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3Ji8zsCE5BBKitVhbDZRzr4a7lJ/d8a414ef-0c02-4f9d-b37c-89964e3c9eb1.jpg"
-    },
-    {
-     "id": "icon-minimal",
-     "label": "Minimal icon",
-     "shirt": "white",
-     "shirtLabel": "White",
-     "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3Ji8zsCE5BBKitVhbDZRzr4a7lJ/bd2e1669-3f54-48b1-949b-699231988b6b.jpg"
     },
     {
      "id": "type-minimal",
@@ -127,6 +127,13 @@ window.SV = {
    "desc": "An honest review of Agua de Valencia. Five stars, would regret again.",
    "styles": [
     {
+     "id": "type-minimal",
+     "label": "Minimal type",
+     "shirt": "white",
+     "shirtLabel": "White",
+     "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3Ji8zsCE5BBKitVhbDZRzr4a7lJ/b9bab0a6-8211-4d2d-a8f3-979a3946ac23.jpg"
+    },
+    {
      "id": "illustrated",
      "label": "Illustrated",
      "shirt": "royal-blue",
@@ -146,13 +153,6 @@ window.SV = {
      "shirt": "navy",
      "shirtLabel": "Navy",
      "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3Ji8zsCE5BBKitVhbDZRzr4a7lJ/817c72d7-d07d-49db-a5c0-c4d4ad474181.jpg"
-    },
-    {
-     "id": "type-minimal",
-     "label": "Minimal type",
-     "shirt": "white",
-     "shirtLabel": "White",
-     "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3Ji8zsCE5BBKitVhbDZRzr4a7lJ/b9bab0a6-8211-4d2d-a8f3-979a3946ac23.jpg"
     }
    ],
    "story": [
@@ -167,6 +167,13 @@ window.SV = {
    "name": "Semi-local, semi-sunburnt",
    "desc": "For everyone who moved here \"for a few months\" three years ago and still burns every June.",
    "styles": [
+    {
+     "id": "type-minimal",
+     "label": "Minimal type",
+     "shirt": "white",
+     "shirtLabel": "White",
+     "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3Ji8zsCE5BBKitVhbDZRzr4a7lJ/d856709f-bd11-4e01-8036-fa85ebb2b418.jpg"
+    },
     {
      "id": "illustrated",
      "label": "Illustrated",
@@ -187,13 +194,6 @@ window.SV = {
      "shirt": "sand",
      "shirtLabel": "Sand",
      "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3Ji8zsCE5BBKitVhbDZRzr4a7lJ/d0a946a4-8ff7-464a-a96b-6a513c8d974a.jpg"
-    },
-    {
-     "id": "type-minimal",
-     "label": "Minimal type",
-     "shirt": "white",
-     "shirtLabel": "White",
-     "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3Ji8zsCE5BBKitVhbDZRzr4a7lJ/d856709f-bd11-4e01-8036-fa85ebb2b418.jpg"
     }
    ],
    "story": null,

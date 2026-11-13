@@ -92,6 +92,31 @@
     });
   }
 
+  /* ---------- Product cards: cycle through every style on hover, 0.5 s apart ---------- */
+  Array.prototype.forEach.call(document.querySelectorAll('.card-photo'), function (card) {
+    var imgs = card.querySelectorAll('.photo-swap img.cyc');
+    if (imgs.length < 2) return;
+    var i = 0, timer = null;
+    function show(n) {
+      imgs[i].classList.remove('on');
+      i = n % imgs.length;
+      imgs[i].classList.add('on');
+    }
+    function start() {
+      if (timer) return;
+      show(i + 1);
+      timer = setInterval(function () { show(i + 1); }, 500);
+    }
+    function stop() {
+      clearInterval(timer); timer = null;
+      show(0);
+    }
+    card.addEventListener('mouseenter', start);
+    card.addEventListener('mouseleave', stop);
+    card.addEventListener('focus', start);
+    card.addEventListener('blur', stop);
+  });
+
   /* ---------- Expose for the product page ---------- */
   window.SVShop = {
     addToBag: function (item) {
