@@ -1,43 +1,81 @@
 /* So Valencia product data. To sell for real, paste each product's Stripe Payment Link into paymentLink. */
 window.SV = {
- "colors": {
-  "blanc": {
-   "label": "Blanc",
-   "hex": "#FFFFFF",
-   "ink": "#1C3D8F"
-  },
-  "sorra": {
-   "label": "Sorra",
-   "hex": "#F4ECDC",
-   "ink": "#1C3D8F"
-  },
-  "blau": {
-   "label": "Blau",
-   "hex": "#1C3D8F",
-   "ink": "#FBF8F2"
-  },
-  "nit": {
-   "label": "Nit",
-   "hex": "#0F1B33",
-   "ink": "#FBF8F2"
-  }
- },
  "products": [
   {
-   "id": "i-love-horchata",
-   "name": "I love horchata",
-   "kind": "tee",
-   "colors": [
-    "blanc",
-    "sorra",
-    "blau"
+   "id": "beach-paella-siesta",
+   "name": "Beach. Paella. Siesta. Repeat.",
+   "desc": "The official Valencian daily routine. Optional: everything except the siesta.",
+   "styles": [
+    {
+     "id": "illustrated",
+     "label": "Illustrated",
+     "shirt": "royal-blue",
+     "shirtLabel": "Royal blue",
+     "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3Ji8zsCE5BBKitVhbDZRzr4a7lJ/3b012082-69a8-43e4-8551-951f43a9baa4.jpg"
+    },
+    {
+     "id": "type-bold",
+     "label": "Bold type",
+     "shirt": "sand",
+     "shirtLabel": "Sand",
+     "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3Ji8zsCE5BBKitVhbDZRzr4a7lJ/ed332250-9a9c-4cd6-b417-ca7d18d972b5.jpg"
+    },
+    {
+     "id": "icon-minimal",
+     "label": "Minimal icon",
+     "shirt": "white",
+     "shirtLabel": "White",
+     "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3Ji8zsCE5BBKitVhbDZRzr4a7lJ/1559e28b-f665-41d3-a5a5-79a545cbcf38.jpg"
+    },
+    {
+     "id": "type-minimal",
+     "label": "Minimal type",
+     "shirt": "white",
+     "shirtLabel": "White",
+     "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3Ji8zsCE5BBKitVhbDZRzr4a7lJ/50d607b2-d9c8-44c4-a0e8-d5d58bd14241.jpg"
+    }
    ],
-   "line1": "I love",
-   "line2": "horchata",
-   "desc": "For anyone who has had an ice-cold horchata in Alboraya and has thought about it ever since.",
+   "story": null,
+   "paymentLink": "",
+   "price": ""
+  },
+  {
+   "id": "valencia-made-me-do-it",
+   "name": "Valencia made me do it",
+   "desc": "For every 4 am dinner, every second jug and every flight you somehow missed. Not your fault. Valencia's.",
+   "styles": [
+    {
+     "id": "illustrated",
+     "label": "Illustrated",
+     "shirt": "royal-blue",
+     "shirtLabel": "Royal blue",
+     "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3Ji8zsCE5BBKitVhbDZRzr4a7lJ/ea1b8e5e-8d60-49a2-8d7a-7e3370e07fe5.jpg"
+    },
+    {
+     "id": "type-bold",
+     "label": "Bold type",
+     "shirt": "white",
+     "shirtLabel": "White",
+     "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3Ji8zsCE5BBKitVhbDZRzr4a7lJ/c7ba85c1-8259-4205-8e9b-00bbe62362d2.jpg"
+    },
+    {
+     "id": "icon-minimal",
+     "label": "Minimal icon",
+     "shirt": "sand",
+     "shirtLabel": "Sand",
+     "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3Ji8zsCE5BBKitVhbDZRzr4a7lJ/041c09ab-f52e-4d2d-8491-31163fdf7f06.jpg"
+    },
+    {
+     "id": "type-minimal",
+     "label": "Minimal type",
+     "shirt": "navy",
+     "shirtLabel": "Navy",
+     "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3Ji8zsCE5BBKitVhbDZRzr4a7lJ/9503185f-7db6-4249-bf92-4010f722bb3f.jpg"
+    }
+   ],
    "story": [
-    "Wait, what is horchata?",
-    "A cold, sweet drink made from tigernuts (chufa) grown in the fields around Alboraya. Not the rice one."
+    "Wait, what is a mascletà?",
+    "The daytime firecracker show in Plaça de l'Ajuntament during Fallas: more noise than you thought possible, every day at 2 pm."
    ],
    "paymentLink": "",
    "price": ""
@@ -45,58 +83,123 @@ window.SV = {
   {
    "id": "sun-sand-agua",
    "name": "Sun, sand & Agua de Valencia",
-   "kind": "tee",
-   "colors": [
-    "sorra",
-    "blanc",
-    "blau"
-   ],
-   "line1": "Sun, sand &",
-   "line2": "Agua de Valencia",
    "desc": "For long beach days that end with a jug of Agua de Valencia somewhere in El Carmen.",
    "price": "18,99 €",
    "paymentLink": "https://buy.stripe.com/dRmeVe0GH17GckDfQN0Ny00",
+   "styles": [
+    {
+     "id": "illustrated",
+     "label": "Illustrated",
+     "shirt": "royal-blue",
+     "shirtLabel": "Royal blue",
+     "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3Ji8zsCE5BBKitVhbDZRzr4a7lJ/c08a9aaa-acb4-4c22-ac42-874b2b228d39.jpg"
+    },
+    {
+     "id": "type-bold",
+     "label": "Bold type",
+     "shirt": "navy",
+     "shirtLabel": "Navy",
+     "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3Ji8zsCE5BBKitVhbDZRzr4a7lJ/d8a414ef-0c02-4f9d-b37c-89964e3c9eb1.jpg"
+    },
+    {
+     "id": "icon-minimal",
+     "label": "Minimal icon",
+     "shirt": "white",
+     "shirtLabel": "White",
+     "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3Ji8zsCE5BBKitVhbDZRzr4a7lJ/bd2e1669-3f54-48b1-949b-699231988b6b.jpg"
+    },
+    {
+     "id": "type-minimal",
+     "label": "Minimal type",
+     "shirt": "sand",
+     "shirtLabel": "Sand",
+     "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3Ji8zsCE5BBKitVhbDZRzr4a7lJ/8f840c5e-cca8-4f0d-93b8-0fb506a6b068.jpg"
+    }
+   ],
    "story": [
     "Wait, what is Agua de Valencia?",
     "The city's famous cocktail: fresh orange juice and cava with a splash of vodka and gin. Shared by the jug, never by the glass."
    ]
   },
   {
-   "id": "born-to-siesta",
-   "name": "Born to siesta & fiesta",
-   "kind": "tee",
-   "colors": [
-    "blau",
-    "blanc",
-    "sorra"
+   "id": "liver-soul",
+   "name": "Bad for your liver, good for your soul",
+   "desc": "An honest review of Agua de Valencia. Five stars, would regret again.",
+   "styles": [
+    {
+     "id": "illustrated",
+     "label": "Illustrated",
+     "shirt": "royal-blue",
+     "shirtLabel": "Royal blue",
+     "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3Ji8zsCE5BBKitVhbDZRzr4a7lJ/0f2d1e44-9d5c-49ab-bfef-c44f0407ae4d.jpg"
+    },
+    {
+     "id": "type-bold",
+     "label": "Bold type",
+     "shirt": "sand",
+     "shirtLabel": "Sand",
+     "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3Ji8zsCE5BBKitVhbDZRzr4a7lJ/09df8c28-6034-4734-8303-42fb116a1bc0.jpg"
+    },
+    {
+     "id": "icon-minimal",
+     "label": "Minimal icon",
+     "shirt": "navy",
+     "shirtLabel": "Navy",
+     "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3Ji8zsCE5BBKitVhbDZRzr4a7lJ/817c72d7-d07d-49db-a5c0-c4d4ad474181.jpg"
+    },
+    {
+     "id": "type-minimal",
+     "label": "Minimal type",
+     "shirt": "white",
+     "shirtLabel": "White",
+     "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3Ji8zsCE5BBKitVhbDZRzr4a7lJ/b9bab0a6-8211-4d2d-a8f3-979a3946ac23.jpg"
+    }
    ],
-   "line1": "Born to",
-   "line2": "siesta & fiesta",
-   "desc": "Two priorities, in that order. Made for long lunches and even longer nights.",
-   "story": null,
+   "story": [
+    "Wait, what is Agua de Valencia?",
+    "The city's famous cocktail: fresh orange juice and cava with a splash of vodka and gin. Shared by the jug, never by the glass."
+   ],
    "paymentLink": "",
    "price": ""
   },
   {
-   "id": "calories-hoodie",
-   "name": "Calories don't count",
-   "kind": "hoodie",
-   "colors": [
-    "nit",
-    "blau"
+   "id": "semi-local",
+   "name": "Semi-local, semi-sunburnt",
+   "desc": "For everyone who moved here \"for a few months\" three years ago and still burns every June.",
+   "styles": [
+    {
+     "id": "illustrated",
+     "label": "Illustrated",
+     "shirt": "navy",
+     "shirtLabel": "Navy",
+     "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3Ji8zsCE5BBKitVhbDZRzr4a7lJ/f714897d-22c0-49f6-8687-4e4c5a784d1a.jpg"
+    },
+    {
+     "id": "type-bold",
+     "label": "Bold type",
+     "shirt": "royal-blue",
+     "shirtLabel": "Royal blue",
+     "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3Ji8zsCE5BBKitVhbDZRzr4a7lJ/d200e8f3-8275-49e5-899a-20df1256cceb.jpg"
+    },
+    {
+     "id": "icon-minimal",
+     "label": "Minimal icon",
+     "shirt": "sand",
+     "shirtLabel": "Sand",
+     "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3Ji8zsCE5BBKitVhbDZRzr4a7lJ/d0a946a4-8ff7-464a-a96b-6a513c8d974a.jpg"
+    },
+    {
+     "id": "type-minimal",
+     "label": "Minimal type",
+     "shirt": "white",
+     "shirtLabel": "White",
+     "img": "https://d2ol7oe51mr4n9.cloudfront.net/user_3Ji8zsCE5BBKitVhbDZRzr4a7lJ/d856709f-bd11-4e01-8036-fa85ebb2b418.jpg"
+    }
    ],
-   "line1": "Calories don't count",
-   "line2": "in Valencia",
-   "desc": "For the evenings when the sea breeze kicks in and the second dessert arrives anyway.",
    "story": null,
    "paymentLink": "",
    "price": ""
   }
  ],
- "price": "[€ price]",
- "paths": {
-  "tee": "M98 14 L58 26 L8 66 L36 116 L72 98 L72 306 Q72 312 78 312 L222 312 Q228 312 228 306 L228 98 L264 116 L292 66 L242 26 L202 14 C194 34 174 46 150 46 C126 46 106 34 98 14 Z",
-  "teeCollar": "M98 14 C106 34 126 46 150 46 C174 46 194 34 202 14",
-  "hoodie": "M104 40 C106 6 194 6 196 40 L246 58 C262 64 270 74 274 90 L294 236 L292 300 Q291 306 285 306 L262 306 Q256 306 256 300 L246 140 L244 312 Q244 318 238 318 L62 318 Q56 318 56 312 L54 140 L44 300 Q44 306 38 306 L15 306 Q9 306 8 300 L6 236 L26 90 C30 74 38 64 54 58 Z"
- }
+ "price": "[€ price]"
 };

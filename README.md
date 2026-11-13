@@ -11,11 +11,15 @@ Plain HTML, CSS and JavaScript. There's no build step and no framework, and it's
 | File | What it is |
 | --- | --- |
 | `index.html` | Home page |
-| `product.html` | Product page. Shows any product via `?p=<id>`, e.g. `product.html?p=i-love-horchata` |
+| `product.html` | Product page. Shows any product via `?p=<id>`, e.g. `product.html?p=sun-sand-agua` |
 | `js/products.js` | **Product data**: names, quotes, colours, descriptions and Stripe links |
 | `js/main.js` | Mobile menu, bag counter, toasts, newsletter form |
 | `js/product.js` | Product page: colour, size, views, add to bag / buy now |
 | `css/style.css` | Animations and responsive rules |
+
+## Product photos
+
+Product photos are realistic mockups (blank tee photos from Higgsfield with the exact DTF print composited on). They are hosted on Higgsfield's image CDN and linked from `js/products.js` (`img` on each style). `img/prints/` holds web-size copies of the print artwork.
 
 ## Selling with Stripe
 
@@ -25,7 +29,7 @@ Plain HTML, CSS and JavaScript. There's no build step and no framework, and it's
    - Turn on **Collect customers' addresses** for shipping.
 2. Open `js/products.js` and paste each link into that product's `"paymentLink": ""`.
 3. Commit. The product's button changes from "Add to bag" to **Buy now** and takes the buyer to Stripe Checkout.
-   The chosen product, colour and size are passed as `client_reference_id` (e.g. `i-love-horchata_blau_M`), so you can see them in the Stripe dashboard.
+   The chosen product, style, shirt colour and size are passed as `client_reference_id` (e.g. `sun-sand-agua_illustrated_royal-blue_M`), so you can see them in the Stripe dashboard.
 
 Products without a link keep the "Add to bag" behaviour, which saves items on the visitor's device only.
 
