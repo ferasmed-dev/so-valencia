@@ -15,6 +15,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<script>try{var f=new URLSearchParams(location.search).get('fit')||localStorage.getItem('sv-fit');if(f==='women'){document.documentElement.setAttribute('data-fit','women');localStorage.setItem('sv-fit','women')}else if(f==='men'){localStorage.setItem('sv-fit','men')}}catch(e){}</script>
 </head>
 <body>
 <a href="#main" class="sr-only">Skip to content</a>
@@ -37,7 +38,7 @@
 </button>
 </header>
 <main id="main" style="max-width:1280px;margin:0 auto;padding:24px 24px 80px;display:flex;flex-direction:column;gap:24px;border-top:1px solid #E5DCC8">
-<p style="margin:0;font-size:14px;color:#4A5468"><a href="index.html">Home</a> / <a href="index.html#shop">Tees</a> / <span id="crumb-name">Beach. Paella. Siesta. Repeat.</span></p>
+<p style="margin:0;font-size:14px;color:#4A5468"><a href="index.html">Home</a> / <a href="index.html#shop">Shop</a> / <span id="crumb-name">Beach. Paella. Siesta. Repeat.</span></p>
 
 <div style="display:flex;flex-wrap:wrap;gap:48px;align-items:flex-start">
 
@@ -49,11 +50,13 @@
 
 <div class="sv-rise sv-d1" style="flex:1 1 400px;min-width:0;display:flex;flex-direction:column;gap:28px">
 <div style="display:flex;flex-direction:column;gap:10px">
-<p style="margin:0;font-size:14px;letter-spacing:0.16em;font-weight:600;color:#1C3D8F">TEE · UNISEX</p>
+<p id="p-kicker" style="margin:0;font-size:14px;letter-spacing:0.16em;font-weight:600;color:#1C3D8F">TEE · MEN</p>
 <h1 id="p-title" class="serif" style="margin:0;font-weight:400;font-size:clamp(34px,4vw,54px);line-height:1.05;color:#1C3D8F">Beach. Paella. Siesta. Repeat.</h1>
 <p id="p-price" style="margin:0;font-size:24px;font-weight:600">[€ price]</p>
 <p id="p-desc" style="margin:0;font-size:17px;line-height:1.6">The official Valencian daily routine. Optional: everything except the siesta.</p>
 </div>
+
+<div class="fit-toggle" role="group" aria-label="Fit"><button type="button" data-fit="men" aria-pressed="true">Men's tee</button><button type="button" data-fit="women" aria-pressed="false">Women's crop top</button></div>
 
 <div style="display:flex;flex-direction:column;gap:12px">
 <p style="margin:0;font-size:15px;font-weight:600">Style: <span id="style-name" style="font-weight:400">Minimal icon · White tee</span></p>
@@ -65,7 +68,7 @@
 <p style="margin:0;font-size:15px;font-weight:600">Size: <span id="size-name" style="font-weight:400">choose one</span></p>
 <a href="#" style="font-size:15px">Size guide</a>
 </div>
-<div role="group" aria-label="Size" style="display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px"><button type="button" class="size-btn" data-size="XS" aria-pressed="false">XS</button><button type="button" class="size-btn" data-size="S" aria-pressed="false">S</button><button type="button" class="size-btn" data-size="M" aria-pressed="false">M</button><button type="button" class="size-btn" data-size="L" aria-pressed="false">L</button><button type="button" class="size-btn" data-size="XL" aria-pressed="false">XL</button></div>
+<div id="sizes" role="group" aria-label="Size" style="display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px"><button type="button" class="size-btn" data-size="XS" aria-pressed="false">XS</button><button type="button" class="size-btn" data-size="S" aria-pressed="false">S</button><button type="button" class="size-btn" data-size="M" aria-pressed="false">M</button><button type="button" class="size-btn" data-size="L" aria-pressed="false">L</button><button type="button" class="size-btn" data-size="XL" aria-pressed="false">XL</button></div>
 <p id="size-err" role="alert" class="hidden" style="margin:0;font-size:15px;color:#B3261E">Pick a size first.</p>
 </div>
 
@@ -74,7 +77,7 @@
 <div style="border-top:1px solid #C9BFA9">
 <details style="border-bottom:1px solid #C9BFA9;padding:18px 0">
 <summary>Print &amp; fit <span class="plus" aria-hidden="true">+</span></summary>
-<p style="margin:12px 0 0;font-size:16px;line-height:1.6">DTF print, soft and flexible, made to survive many washes. Regular unisex fit, true to size. [Fabric and weight: confirm with your supplier.]</p>
+<p style="margin:12px 0 0;font-size:16px;line-height:1.6">DTF print, soft and flexible, made to survive many washes. <span id="fit-note">Regular fit, true to size.</span> [Fabric and weight: confirm with your supplier.]</p>
 </details>
 <details style="border-bottom:1px solid #C9BFA9;padding:18px 0">
 <summary>Shipping &amp; returns <span class="plus" aria-hidden="true">+</span></summary>

@@ -92,11 +92,40 @@
     });
   }
 
+  /* ---------- Men / Women switch (shared by shop and product page) ---------- */
+  function getFit() {
+    return document.documentElement.getAttribute('data-fit') === 'women' ? 'women' : 'men';
+  }
+  function syncToggles() {
+    var fit = getFit();
+    Array.prototype.forEach.call(document.querySelectorAll('.fit-toggle button'), function (b) {
+      b.setAttribute('aria-pressed', b.getAttribute('data-fit') === fit ? 'true' : 'false');
+    });
+    Array.prototype.forEach.call(document.querySelectorAll('.card-photo[data-pid]'), function (card) {
+      card.href = 'product.html?p=' + encodeURIComponent(card.getAttribute('data-pid')) + (fit === 'women' ? '&fit=women' : '');
+    });
+  }
+  function setFit(fit) {
+    fit = fit === 'women' ? 'women' : 'men';
+    if (fit === getFit()) return;
+    if (fit === 'women') document.documentElement.setAttribute('data-fit', 'women');
+    else document.documentElement.removeAttribute('data-fit');
+    try { localStorage.setItem('sv-fit', fit); } catch (err) { /* ignore */ }
+    syncToggles();
+    var ev;
+    try { ev = new CustomEvent('sv:fit', { detail: fit }); } catch (err) { ev = document.createEvent('CustomEvent'); ev.initCustomEvent('sv:fit', false, false, fit); }
+    document.dispatchEvent(ev);
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('.fit-toggle button'), function (b) {
+    b.addEventListener('click', function () { setFit(b.getAttribute('data-fit')); });
+  });
+  syncToggles();
+
   /* ---------- Product cards: cycle through every style on hover, 0.5 s apart ---------- */
-  Array.prototype.forEach.call(document.querySelectorAll('.card-photo'), function (card) {
-    var imgs = card.querySelectorAll('.photo-swap img.cyc');
-    if (imgs.length < 2) return;
-    var i = 0, timer = null;
+  var cards = document.querySelectorAll('.card-photo');
+  Array.prototype.forEach.call(cards, function (card) {
+    var i = 0, timer = null, imgs = null;
+    function current() { return card.querySelectorAll('.fit-' + getFit() + ' img.cyc'); }
     function show(n) {
       imgs[i].classList.remove('on');
       i = n % imgs.length;
@@ -104,19 +133,29 @@
     }
     function start() {
       if (timer) return;
-      show(i + 1);
+      imgs = current();
+      i = 0;
+      if (imgs.length < 2) return;
+      show(1);
       timer = setInterval(function () { show(i + 1); }, 500);
     }
     function stop() {
       clearInterval(timer); timer = null;
-      show(0);
+      if (imgs && imgs.length) show(0);
     }
-    card.addEventListener('mouseenter', start);
-    card.addEventListener('mouseleave', stop);
-    card.addEventListener('focus', start);
-    card.addEventListener('blur', stop);
+    card.addEventListener('mouseenter', function () { card._svActive = true; start(); });
+    card.addEventListener('mouseleave', function () { card._svActive = false; stop(); });
+    card.addEventListener('focus', function () { card._svActive = true; start(); });
+    card.addEventListener('blur', function () { card._svActive = false; stop(); });
     card._svStart = start;
     card._svStop = stop;
+  });
+  document.addEventListener('sv:fit', function () {
+    Array.prototype.forEach.call(cards, function (card) {
+      if (!card._svStop) return;
+      card._svStop();
+      if (card._svActive) card._svStart();
+    });
   });
 
   /* ---------- Touch screens (no hover): cycle while the card is on screen ---------- */
@@ -126,10 +165,11 @@
       entries.forEach(function (en) {
         var card = en.target;
         if (!card._svStart) return;
+        card._svActive = en.isIntersecting;
         if (en.isIntersecting) card._svStart(); else card._svStop();
       });
     }, { threshold: 0.6 });
-    Array.prototype.forEach.call(document.querySelectorAll('.card-photo'), function (card) { io.observe(card); });
+    Array.prototype.forEach.call(cards, function (card) { io.observe(card); });
   }
 
   /* ---------- Expose for the product page ---------- */
@@ -139,6 +179,8 @@
       writeBag(memoryBag);
       renderBag(true);
     },
-    toast: showToast
+    toast: showToast,
+    getFit: getFit,
+    setFit: setFit
   };
 })();

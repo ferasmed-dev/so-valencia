@@ -19,17 +19,24 @@ Plain HTML, CSS and JavaScript. There's no build step and no framework, and it's
 
 ## Product photos
 
-Product photos are realistic mockups (blank tee photos from Higgsfield with the exact DTF print composited on). They are hosted on Higgsfield's image CDN and linked from `js/products.js` (`img` on each style). `img/prints/` holds web-size copies of the print artwork.
+Product photos are realistic mockups (blank tee photos from Higgsfield with the exact DTF print composited on). They are hosted on Higgsfield's image CDN and linked from `js/products.js` (`img` on each style, per fit). `img/prints/` holds web-size copies of the print artwork.
 
 ## Selling with Stripe
 
-1. In Stripe, create a **Payment Link** for each product.
-   - Add a custom field: **Dropdown**, "Size": XS, S, M, L, XL.
+Every product comes in two fits, switched with the **Men / Women** toggle on the shop and product pages:
+
+- `fits.men`: tee, sizes XS, S, M, L, XL
+- `fits.women`: crop top, sizes XS, M, L, XL
+
+Each fit has its own `price` and `paymentLink`.
+
+1. In Stripe, create a **Payment Link** for each product and fit (men's tee and women's crop top are separate links, since the prices differ).
+   - Add a custom field: **Dropdown**, "Size": XS, S, M, L, XL for tees, or XS, M, L, XL for crop tops.
    - Add a custom field: **Dropdown**, "Colour", with that product's colours.
    - Turn on **Collect customers' addresses** for shipping.
-2. Open `js/products.js` and paste each link into that product's `"paymentLink": ""`.
+2. Open `js/products.js` and paste each link into the right fit's `"paymentLink": ""` (and set its `"price"`).
 3. Commit. The product's button changes from "Add to bag" to **Buy now** and takes the buyer to Stripe Checkout.
-   The chosen product, style, shirt colour and size are passed as `client_reference_id` (e.g. `sun-sand-agua_illustrated_royal-blue_M`), so you can see them in the Stripe dashboard.
+   The chosen product, style, shirt colour and size are passed as `client_reference_id` (e.g. `sun-sand-agua_women_illustrated_royal-blue_M`), so you can see them in the Stripe dashboard.
 
 Products without a link keep the "Add to bag" behaviour, which saves items on the visitor's device only.
 
