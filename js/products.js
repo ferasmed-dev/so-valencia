@@ -62,6 +62,7 @@ window.SV = {
      "paymentLink": "",
      "sizes": [
       "XS",
+      "S",
       "M",
       "L",
       "XL"
@@ -162,6 +163,7 @@ window.SV = {
      "paymentLink": "",
      "sizes": [
       "XS",
+      "S",
       "M",
       "L",
       "XL"
@@ -262,6 +264,7 @@ window.SV = {
      "paymentLink": "",
      "sizes": [
       "XS",
+      "S",
       "M",
       "L",
       "XL"
@@ -362,6 +365,7 @@ window.SV = {
      "paymentLink": "",
      "sizes": [
       "XS",
+      "S",
       "M",
       "L",
       "XL"
@@ -459,6 +463,7 @@ window.SV = {
      "paymentLink": "",
      "sizes": [
       "XS",
+      "S",
       "M",
       "L",
       "XL"
