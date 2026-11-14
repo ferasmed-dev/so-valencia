@@ -31,7 +31,7 @@ Every product comes in two fits, switched with the **Men / Women** toggle on the
 Each fit has its own `price` and `paymentLink`.
 
 1. In Stripe, create a **Payment Link** for each product and fit (men's tee and women's crop top are separate links, since the prices differ).
-   - Add a custom field: **Dropdown**, "Size": XS, S, M, L, XL for tees, for both tees and crop tops.
+   - Add a custom field: **Dropdown**, "Size": XS, S, M, L, XL (same for tees and crop tops).
    - Add a custom field: **Dropdown**, "Colour", with that product's colours.
    - Turn on **Collect customers' addresses** for shipping.
 2. Open `js/products.js` and paste each link into the right fit's `"paymentLink": ""` (and set its `"price"`).
